@@ -52,6 +52,7 @@ router.post("/recover", async (req,res) => {
 })
 router.get("/current",async(req,res)=>{
     const currentUser = req.session.user
+    console.log(req.session)
     res.send({staturs:"ok",message: currentUser})
 })
 export default router 

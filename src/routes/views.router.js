@@ -56,9 +56,8 @@ res.render('cart',{
 
 router.get('/cart',async(req,res)=>{
     let user = req.session.user
-    console.log(user)
     let cartId =user.cart
-    const cart = await cartsModel.findById(cartId).lean()
+    const cart = await cartsModel.findById(cartId).populate("products._id").lean()
     console.log(cart)
     const products = cart.products
    
