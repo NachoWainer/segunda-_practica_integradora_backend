@@ -2,9 +2,10 @@
   <h1>Productos en el carrito de {{user.first_name}}</h1>
 
   {{#each products}}
-    <p>id: {{_id}}</p>
-    <p>name: {{title}}</p>
+    <p>id: {{_id._id}}</p>
+    <p>name: {{_id.title}}</p>
     <p>quantity: {{quantity}}</p>
+    <p>price: $ {{_id.price}}</p>
     <hr/>
 
     {{/each}}

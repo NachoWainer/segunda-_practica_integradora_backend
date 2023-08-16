@@ -57,8 +57,8 @@ res.render('cart',{
 router.get('/cart',async(req,res)=>{
     let user = req.session.user
     let cartId =user.cart
-    const cart = await cartsModel.findById(cartId).populate("products._id").lean()
-    console.log(cart)
+    const cart = await cartsModel.findOne({_id:cartId}).populate("products._id").lean()
+
     const products = cart.products
    
    res.render('cart',{
